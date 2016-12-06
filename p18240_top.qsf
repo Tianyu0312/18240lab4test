@@ -42,18 +42,6 @@ set_global_assignment -name TOP_LEVEL_ENTITY p18240_top
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 12.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "22:49:49  DECEMBER 04, 2016"
 set_global_assignment -name LAST_QUARTUS_VERSION 12.1
-set_global_assignment -name SYSTEMVERILOG_FILE regfile.sv
-set_global_assignment -name SYSTEMVERILOG_FILE p18240.sv
-set_global_assignment -name SYSTEMVERILOG_FILE memory.sv
-set_global_assignment -name HEX_FILE mem.hex
-set_global_assignment -name SYSTEMVERILOG_FILE library.sv
-set_global_assignment -name SYSTEMVERILOG_FILE display.sv
-set_global_assignment -name SYSTEMVERILOG_FILE datapath.sv
-set_global_assignment -name SYSTEMVERILOG_FILE controlpath.sv
-set_global_assignment -name SYSTEMVERILOG_FILE constants.sv
-set_global_assignment -name HEX_FILE char_rom.hex
-set_global_assignment -name SYSTEMVERILOG_FILE alu.sv
-set_global_assignment -name SOURCE_FILE add32.asm
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
@@ -592,4 +580,16 @@ set_location_assignment PIN_D9 -to EXT_IO[6]
 set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
 set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_global_assignment -name HEX_FILE mem.hex
+set_global_assignment -name SYSTEMVERILOG_FILE regfile.sv
+set_global_assignment -name SYSTEMVERILOG_FILE p18240.sv
+set_global_assignment -name SYSTEMVERILOG_FILE memory.sv
+set_global_assignment -name SYSTEMVERILOG_FILE library.sv
+set_global_assignment -name SYSTEMVERILOG_FILE display.sv
+set_global_assignment -name SYSTEMVERILOG_FILE datapath.sv
+set_global_assignment -name SYSTEMVERILOG_FILE controlpath.sv
+set_global_assignment -name SYSTEMVERILOG_FILE constants.sv
+set_global_assignment -name HEX_FILE char_rom.hex
+set_global_assignment -name SYSTEMVERILOG_FILE alu.sv
+set_global_assignment -name SOURCE_FILE add32.asm
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

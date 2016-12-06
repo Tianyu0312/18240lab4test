@@ -1,0 +1,1441 @@
+Analysis & Synthesis report for p18240_top
+Tue Dec  6 17:05:58 2016
+Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Registers Added for RAM Pass-Through Logic
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for memorySystem:mem|memory256x16_program:pmem|altsyncram:mem_rtl_0|altsyncram_imj1:auto_generated
+ 14. Source assignments for memorySystem:mem|memory256x16:dmem|altsyncram:mem_rtl_0|altsyncram_nvd1:auto_generated
+ 15. Source assignments for memorySystem:mem|memory256x16:smem|altsyncram:mem_rtl_0|altsyncram_nvd1:auto_generated
+ 16. Parameter Settings for User Entity Instance: datapath:dp|mux8to1:REG1A
+ 17. Parameter Settings for User Entity Instance: datapath:dp|mux8to1:REG1B
+ 18. Parameter Settings for User Entity Instance: datapath:dp|reg_file:rfile|register:reg0
+ 19. Parameter Settings for User Entity Instance: datapath:dp|reg_file:rfile|register:reg1
+ 20. Parameter Settings for User Entity Instance: datapath:dp|reg_file:rfile|register:reg2
+ 21. Parameter Settings for User Entity Instance: datapath:dp|reg_file:rfile|register:reg3
+ 22. Parameter Settings for User Entity Instance: datapath:dp|reg_file:rfile|register:reg4
+ 23. Parameter Settings for User Entity Instance: datapath:dp|reg_file:rfile|register:reg5
+ 24. Parameter Settings for User Entity Instance: datapath:dp|reg_file:rfile|register:reg6
+ 25. Parameter Settings for User Entity Instance: datapath:dp|reg_file:rfile|register:reg7
+ 26. Parameter Settings for User Entity Instance: datapath:dp|reg_file:rfile|demux:reg_en_decoder
+ 27. Parameter Settings for User Entity Instance: datapath:dp|reg_file:rfile|mux8to1:muxA
+ 28. Parameter Settings for User Entity Instance: datapath:dp|reg_file:rfile|mux8to1:muxB
+ 29. Parameter Settings for User Entity Instance: datapath:dp|tridrive:a
+ 30. Parameter Settings for User Entity Instance: datapath:dp|tridrive:b
+ 31. Parameter Settings for User Entity Instance: datapath:dp|tridrive:c
+ 32. Parameter Settings for User Entity Instance: datapath:dp|mux4to1:MuxA
+ 33. Parameter Settings for User Entity Instance: datapath:dp|mux4to1:MuxB
+ 34. Parameter Settings for User Entity Instance: datapath:dp|demux:reg_load_decoder
+ 35. Parameter Settings for User Entity Instance: datapath:dp|register:pcReg
+ 36. Parameter Settings for User Entity Instance: datapath:dp|register:memDataReg
+ 37. Parameter Settings for User Entity Instance: datapath:dp|register:memAddrReg
+ 38. Parameter Settings for User Entity Instance: datapath:dp|register:instrReg
+ 39. Parameter Settings for User Entity Instance: datapath:dp|register:spReg
+ 40. Parameter Settings for User Entity Instance: datapath:dp|register:condCodeReg
+ 41. Parameter Settings for User Entity Instance: datapath:dp|tridrive:from_SW
+ 42. Parameter Settings for User Entity Instance: datapath:dp|register:comb_24
+ 43. Parameter Settings for Inferred Entity Instance: memorySystem:mem|memory256x16_program:pmem|altsyncram:mem_rtl_0
+ 44. Parameter Settings for Inferred Entity Instance: memorySystem:mem|memory256x16:dmem|altsyncram:mem_rtl_0
+ 45. Parameter Settings for Inferred Entity Instance: memorySystem:mem|memory256x16:smem|altsyncram:mem_rtl_0
+ 46. altsyncram Parameter Settings by Entity Instance
+ 47. Port Connectivity Checks: "SevenSegmentControl:ssc"
+ 48. Port Connectivity Checks: "datapath:dp|register:comb_24"
+ 49. Port Connectivity Checks: "datapath:dp|demux:reg_load_decoder"
+ 50. Port Connectivity Checks: "datapath:dp|mux8to1:REG1B"
+ 51. Port Connectivity Checks: "datapath:dp|mux8to1:REG1A"
+ 52. Port Connectivity Checks: "datapath:dp"
+ 53. Port Connectivity Checks: "controlpath:cp"
+ 54. Elapsed Time Per Partition
+ 55. Analysis & Synthesis Messages
+ 56. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2012 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                   ;
++------------------------------------+-------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Dec  6 17:05:57 2016     ;
+; Quartus II 64-Bit Version          ; 12.1 Build 177 11/07/2012 SJ Full Version ;
+; Revision Name                      ; p18240_top                                ;
+; Top-level Entity Name              ; p18240_top                                ;
+; Family                             ; Cyclone IV E                              ;
+; Total logic elements               ; 1,554                                     ;
+;     Total combinational functions  ; 1,232                                     ;
+;     Dedicated logic registers      ; 388                                       ;
+; Total registers                    ; 388                                       ;
+; Total pins                         ; 126                                       ;
+; Total virtual pins                 ; 0                                         ;
+; Total memory bits                  ; 12,288                                    ;
+; Embedded Multiplier 9-bit elements ; 0                                         ;
+; Total PLLs                         ; 0                                         ;
++------------------------------------+-------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; p18240_top         ; p18240_top         ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-4 processors         ; < 0.1%      ;
+;     5-8 processors         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                         ;
++----------------------------------------------------------+-----------------+------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                         ; Used in Netlist ; File Type                                                  ; File Name with Absolute Path                                                                               ; Library ;
++----------------------------------------------------------+-----------------+------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+---------+
+; mem.hex                                                  ; yes             ; User Hexadecimal (Intel-Format) File                       ; /afs/ece.cmu.edu/usr/shulij/Private/18240lab4test/mem.hex                                                  ;         ;
+; regfile.sv                                               ; yes             ; User SystemVerilog HDL File                                ; /afs/ece.cmu.edu/usr/shulij/Private/18240lab4test/regfile.sv                                               ;         ;
+; p18240.sv                                                ; yes             ; User SystemVerilog HDL File                                ; /afs/ece.cmu.edu/usr/shulij/Private/18240lab4test/p18240.sv                                                ;         ;
+; memory.sv                                                ; yes             ; User SystemVerilog HDL File                                ; /afs/ece.cmu.edu/usr/shulij/Private/18240lab4test/memory.sv                                                ;         ;
+; library.sv                                               ; yes             ; User SystemVerilog HDL File                                ; /afs/ece.cmu.edu/usr/shulij/Private/18240lab4test/library.sv                                               ;         ;
+; datapath.sv                                              ; yes             ; User SystemVerilog HDL File                                ; /afs/ece.cmu.edu/usr/shulij/Private/18240lab4test/datapath.sv                                              ;         ;
+; controlpath.sv                                           ; yes             ; User SystemVerilog HDL File                                ; /afs/ece.cmu.edu/usr/shulij/Private/18240lab4test/controlpath.sv                                           ;         ;
+; constants.sv                                             ; yes             ; User SystemVerilog HDL File                                ; /afs/ece.cmu.edu/usr/shulij/Private/18240lab4test/constants.sv                                             ;         ;
+; alu.sv                                                   ; yes             ; User SystemVerilog HDL File                                ; /afs/ece.cmu.edu/usr/shulij/Private/18240lab4test/alu.sv                                                   ;         ;
+; memory.hex                                               ; yes             ; Auto-Generated Auto-Found Hexadecimal (Intel-Format) File  ; memory.hex                                                                                                 ;         ;
+; altsyncram.tdf                                           ; yes             ; Megafunction                                               ; /afs/ece/support/altera/release/12.1/quartus/libraries/megafunctions/altsyncram.tdf                        ;         ;
+; stratix_ram_block.inc                                    ; yes             ; Megafunction                                               ; /afs/ece/support/altera/release/12.1/quartus/libraries/megafunctions/stratix_ram_block.inc                 ;         ;
+; lpm_mux.inc                                              ; yes             ; Megafunction                                               ; /afs/ece/support/altera/release/12.1/quartus/libraries/megafunctions/lpm_mux.inc                           ;         ;
+; lpm_decode.inc                                           ; yes             ; Megafunction                                               ; /afs/ece/support/altera/release/12.1/quartus/libraries/megafunctions/lpm_decode.inc                        ;         ;
+; aglobal121.inc                                           ; yes             ; Megafunction                                               ; /afs/ece/support/altera/release/12.1/quartus/libraries/megafunctions/aglobal121.inc                        ;         ;
+; a_rdenreg.inc                                            ; yes             ; Megafunction                                               ; /afs/ece/support/altera/release/12.1/quartus/libraries/megafunctions/a_rdenreg.inc                         ;         ;
+; altrom.inc                                               ; yes             ; Megafunction                                               ; /afs/ece/support/altera/release/12.1/quartus/libraries/megafunctions/altrom.inc                            ;         ;
+; altram.inc                                               ; yes             ; Megafunction                                               ; /afs/ece/support/altera/release/12.1/quartus/libraries/megafunctions/altram.inc                            ;         ;
+; altdpram.inc                                             ; yes             ; Megafunction                                               ; /afs/ece/support/altera/release/12.1/quartus/libraries/megafunctions/altdpram.inc                          ;         ;
+; db/altsyncram_imj1.tdf                                   ; yes             ; Auto-Generated Megafunction                                ; /afs/ece.cmu.edu/usr/shulij/Private/18240lab4test/db/altsyncram_imj1.tdf                                   ;         ;
+; db/p18240_top.ram0_memory256x16_program_6357e339.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File       ; /afs/ece.cmu.edu/usr/shulij/Private/18240lab4test/db/p18240_top.ram0_memory256x16_program_6357e339.hdl.mif ;         ;
+; db/altsyncram_nvd1.tdf                                   ; yes             ; Auto-Generated Megafunction                                ; /afs/ece.cmu.edu/usr/shulij/Private/18240lab4test/db/altsyncram_nvd1.tdf                                   ;         ;
++----------------------------------------------------------+-----------------+------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 1,554 ;
+;                                             ;       ;
+; Total combinational functions               ; 1232  ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 869   ;
+;     -- 3 input functions                    ; 242   ;
+;     -- <=2 input functions                  ; 121   ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 1093  ;
+;     -- arithmetic mode                      ; 139   ;
+;                                             ;       ;
+; Total registers                             ; 388   ;
+;     -- Dedicated logic registers            ; 388   ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 126   ;
+; Total memory bits                           ; 12288 ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out                             ; 436   ;
+; Total fan-out                               ; 6868  ;
+; Average fan-out                             ; 3.58  ;
++---------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                  ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                        ; Library Name ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------+--------------+
+; |p18240_top                                  ; 1232 (64)         ; 388 (0)      ; 12288       ; 0            ; 0       ; 0         ; 126  ; 0            ; |p18240_top                                                                                                ;              ;
+;    |SevenSegmentControl:ssc|                 ; 56 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|SevenSegmentControl:ssc                                                                        ;              ;
+;       |SevenSegmentDigit:ssd0|               ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|SevenSegmentControl:ssc|SevenSegmentDigit:ssd0                                                 ;              ;
+;          |HEXtoSevenSegment:h2ss|            ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|SevenSegmentControl:ssc|SevenSegmentDigit:ssd0|HEXtoSevenSegment:h2ss                          ;              ;
+;       |SevenSegmentDigit:ssd1|               ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|SevenSegmentControl:ssc|SevenSegmentDigit:ssd1                                                 ;              ;
+;          |HEXtoSevenSegment:h2ss|            ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|SevenSegmentControl:ssc|SevenSegmentDigit:ssd1|HEXtoSevenSegment:h2ss                          ;              ;
+;       |SevenSegmentDigit:ssd2|               ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|SevenSegmentControl:ssc|SevenSegmentDigit:ssd2                                                 ;              ;
+;          |HEXtoSevenSegment:h2ss|            ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|SevenSegmentControl:ssc|SevenSegmentDigit:ssd2|HEXtoSevenSegment:h2ss                          ;              ;
+;       |SevenSegmentDigit:ssd3|               ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|SevenSegmentControl:ssc|SevenSegmentDigit:ssd3                                                 ;              ;
+;          |HEXtoSevenSegment:h2ss|            ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|SevenSegmentControl:ssc|SevenSegmentDigit:ssd3|HEXtoSevenSegment:h2ss                          ;              ;
+;       |SevenSegmentDigit:ssd4|               ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|SevenSegmentControl:ssc|SevenSegmentDigit:ssd4                                                 ;              ;
+;          |HEXtoSevenSegment:h2ss|            ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|SevenSegmentControl:ssc|SevenSegmentDigit:ssd4|HEXtoSevenSegment:h2ss                          ;              ;
+;       |SevenSegmentDigit:ssd5|               ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|SevenSegmentControl:ssc|SevenSegmentDigit:ssd5                                                 ;              ;
+;          |HEXtoSevenSegment:h2ss|            ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|SevenSegmentControl:ssc|SevenSegmentDigit:ssd5|HEXtoSevenSegment:h2ss                          ;              ;
+;       |SevenSegmentDigit:ssd6|               ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|SevenSegmentControl:ssc|SevenSegmentDigit:ssd6                                                 ;              ;
+;          |HEXtoSevenSegment:h2ss|            ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|SevenSegmentControl:ssc|SevenSegmentDigit:ssd6|HEXtoSevenSegment:h2ss                          ;              ;
+;       |SevenSegmentDigit:ssd7|               ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|SevenSegmentControl:ssc|SevenSegmentDigit:ssd7                                                 ;              ;
+;          |HEXtoSevenSegment:h2ss|            ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|SevenSegmentControl:ssc|SevenSegmentDigit:ssd7|HEXtoSevenSegment:h2ss                          ;              ;
+;    |controlpath:cp|                          ; 310 (310)         ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|controlpath:cp                                                                                 ;              ;
+;    |datapath:dp|                             ; 682 (13)          ; 212 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp                                                                                    ;              ;
+;       |alu:alu_dp|                           ; 328 (328)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|alu:alu_dp                                                                         ;              ;
+;       |demux:reg_load_decoder|               ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|demux:reg_load_decoder                                                             ;              ;
+;       |mux4to1:MuxA|                         ; 119 (119)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|mux4to1:MuxA                                                                       ;              ;
+;       |mux4to1:MuxB|                         ; 116 (116)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|mux4to1:MuxB                                                                       ;              ;
+;       |reg_file:rfile|                       ; 10 (0)            ; 128 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|reg_file:rfile                                                                     ;              ;
+;          |demux:reg_en_decoder|              ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|reg_file:rfile|demux:reg_en_decoder                                                ;              ;
+;          |register:reg0|                     ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|reg_file:rfile|register:reg0                                                       ;              ;
+;          |register:reg1|                     ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|reg_file:rfile|register:reg1                                                       ;              ;
+;          |register:reg2|                     ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|reg_file:rfile|register:reg2                                                       ;              ;
+;          |register:reg3|                     ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|reg_file:rfile|register:reg3                                                       ;              ;
+;          |register:reg4|                     ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|reg_file:rfile|register:reg4                                                       ;              ;
+;          |register:reg5|                     ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|reg_file:rfile|register:reg5                                                       ;              ;
+;          |register:reg6|                     ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|reg_file:rfile|register:reg6                                                       ;              ;
+;          |register:reg7|                     ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|reg_file:rfile|register:reg7                                                       ;              ;
+;       |register:condCodeReg|                 ; 0 (0)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|register:condCodeReg                                                               ;              ;
+;       |register:instrReg|                    ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|register:instrReg                                                                  ;              ;
+;       |register:memAddrReg|                  ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|register:memAddrReg                                                                ;              ;
+;       |register:memDataReg|                  ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|register:memDataReg                                                                ;              ;
+;       |register:pcReg|                       ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|register:pcReg                                                                     ;              ;
+;       |register:spReg|                       ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|register:spReg                                                                     ;              ;
+;       |tridrive:a|                           ; 39 (39)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|tridrive:a                                                                         ;              ;
+;       |tridrive:c|                           ; 49 (49)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|tridrive:c                                                                         ;              ;
+;       |tridrive:from_SW|                     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|tridrive:from_SW                                                                   ;              ;
+;    |memorySystem:mem|                        ; 120 (3)           ; 166 (0)      ; 12288       ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|memorySystem:mem                                                                               ;              ;
+;       |memory256x16:dmem|                    ; 41 (41)           ; 50 (50)      ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|memorySystem:mem|memory256x16:dmem                                                             ;              ;
+;          |altsyncram:mem_rtl_0|              ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|memorySystem:mem|memory256x16:dmem|altsyncram:mem_rtl_0                                        ;              ;
+;             |altsyncram_nvd1:auto_generated| ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|memorySystem:mem|memory256x16:dmem|altsyncram:mem_rtl_0|altsyncram_nvd1:auto_generated         ;              ;
+;       |memory256x16:smem|                    ; 33 (33)           ; 50 (50)      ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|memorySystem:mem|memory256x16:smem                                                             ;              ;
+;          |altsyncram:mem_rtl_0|              ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|memorySystem:mem|memory256x16:smem|altsyncram:mem_rtl_0                                        ;              ;
+;             |altsyncram_nvd1:auto_generated| ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|memorySystem:mem|memory256x16:smem|altsyncram:mem_rtl_0|altsyncram_nvd1:auto_generated         ;              ;
+;       |memory256x16_program:pmem|            ; 43 (43)           ; 66 (66)      ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|memorySystem:mem|memory256x16_program:pmem                                                     ;              ;
+;          |altsyncram:mem_rtl_0|              ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|memorySystem:mem|memory256x16_program:pmem|altsyncram:mem_rtl_0                                ;              ;
+;             |altsyncram_imj1:auto_generated| ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|memorySystem:mem|memory256x16_program:pmem|altsyncram:mem_rtl_0|altsyncram_imj1:auto_generated ;              ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                                  ;
++-----------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+----------------------------------------------------------+
+; Name                                                                                                      ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                                                      ;
++-----------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+----------------------------------------------------------+
+; memorySystem:mem|memory256x16:dmem|altsyncram:mem_rtl_0|altsyncram_nvd1:auto_generated|ALTSYNCRAM         ; AUTO ; Simple Dual Port ; 256          ; 16           ; 256          ; 16           ; 4096 ; None                                                     ;
+; memorySystem:mem|memory256x16:smem|altsyncram:mem_rtl_0|altsyncram_nvd1:auto_generated|ALTSYNCRAM         ; AUTO ; Simple Dual Port ; 256          ; 16           ; 256          ; 16           ; 4096 ; None                                                     ;
+; memorySystem:mem|memory256x16_program:pmem|altsyncram:mem_rtl_0|altsyncram_imj1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 256          ; 16           ; 256          ; 16           ; 4096 ; db/p18240_top.ram0_memory256x16_program_6357e339.hdl.mif ;
++-----------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+----------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 388   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 249   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 287   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------+
+; Inverted Register Statistics                                              ;
++-----------------------------------------------------------------+---------+
+; Inverted Register                                               ; Fan out ;
++-----------------------------------------------------------------+---------+
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[42] ; 1       ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[44] ; 1       ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[46] ; 1       ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[48] ; 1       ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[34] ; 1       ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[36] ; 1       ;
+; memorySystem:mem|memory256x16_program:pmem|mem~11               ; 1       ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[38] ; 1       ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[37] ; 1       ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[40] ; 1       ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[26] ; 1       ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[28] ; 1       ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[30] ; 1       ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[32] ; 1       ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[18] ; 1       ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[20] ; 1       ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[22] ; 1       ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[24] ; 1       ;
+; Total number of inverted registers = 18                         ;         ;
++-----------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Registers Added for RAM Pass-Through Logic                                                                             ;
++-----------------------------------------------------------------+------------------------------------------------------+
+; Register Name                                                   ; RAM Name                                             ;
++-----------------------------------------------------------------+------------------------------------------------------+
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[0]  ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[1]  ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[2]  ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[3]  ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[4]  ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[5]  ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[6]  ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[7]  ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[8]  ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[9]  ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[10] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[11] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[12] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[13] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[14] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[15] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[16] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[17] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[18] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[19] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[20] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[21] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[22] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[23] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[24] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[25] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[26] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[27] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[28] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[29] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[30] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[31] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[32] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[33] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[34] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[35] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[36] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[37] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[38] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[39] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[40] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[41] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[42] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[43] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[44] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[45] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[46] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[47] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[48] ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0 ;
+; memorySystem:mem|memory256x16:dmem|mem_rtl_0_bypass[0]          ; memorySystem:mem|memory256x16:dmem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:dmem|mem_rtl_0_bypass[1]          ; memorySystem:mem|memory256x16:dmem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:dmem|mem_rtl_0_bypass[2]          ; memorySystem:mem|memory256x16:dmem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:dmem|mem_rtl_0_bypass[3]          ; memorySystem:mem|memory256x16:dmem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:dmem|mem_rtl_0_bypass[4]          ; memorySystem:mem|memory256x16:dmem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:dmem|mem_rtl_0_bypass[5]          ; memorySystem:mem|memory256x16:dmem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:dmem|mem_rtl_0_bypass[6]          ; memorySystem:mem|memory256x16:dmem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:dmem|mem_rtl_0_bypass[7]          ; memorySystem:mem|memory256x16:dmem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:dmem|mem_rtl_0_bypass[8]          ; memorySystem:mem|memory256x16:dmem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:dmem|mem_rtl_0_bypass[9]          ; memorySystem:mem|memory256x16:dmem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:dmem|mem_rtl_0_bypass[10]         ; memorySystem:mem|memory256x16:dmem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:dmem|mem_rtl_0_bypass[11]         ; memorySystem:mem|memory256x16:dmem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:dmem|mem_rtl_0_bypass[12]         ; memorySystem:mem|memory256x16:dmem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:dmem|mem_rtl_0_bypass[13]         ; memorySystem:mem|memory256x16:dmem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:dmem|mem_rtl_0_bypass[14]         ; memorySystem:mem|memory256x16:dmem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:dmem|mem_rtl_0_bypass[15]         ; memorySystem:mem|memory256x16:dmem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:dmem|mem_rtl_0_bypass[16]         ; memorySystem:mem|memory256x16:dmem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:dmem|mem_rtl_0_bypass[17]         ; memorySystem:mem|memory256x16:dmem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:dmem|mem_rtl_0_bypass[18]         ; memorySystem:mem|memory256x16:dmem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:dmem|mem_rtl_0_bypass[19]         ; memorySystem:mem|memory256x16:dmem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:dmem|mem_rtl_0_bypass[20]         ; memorySystem:mem|memory256x16:dmem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:dmem|mem_rtl_0_bypass[21]         ; memorySystem:mem|memory256x16:dmem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:dmem|mem_rtl_0_bypass[22]         ; memorySystem:mem|memory256x16:dmem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:dmem|mem_rtl_0_bypass[23]         ; memorySystem:mem|memory256x16:dmem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:dmem|mem_rtl_0_bypass[24]         ; memorySystem:mem|memory256x16:dmem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:dmem|mem_rtl_0_bypass[25]         ; memorySystem:mem|memory256x16:dmem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:dmem|mem_rtl_0_bypass[26]         ; memorySystem:mem|memory256x16:dmem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:dmem|mem_rtl_0_bypass[27]         ; memorySystem:mem|memory256x16:dmem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:dmem|mem_rtl_0_bypass[28]         ; memorySystem:mem|memory256x16:dmem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:dmem|mem_rtl_0_bypass[29]         ; memorySystem:mem|memory256x16:dmem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:dmem|mem_rtl_0_bypass[30]         ; memorySystem:mem|memory256x16:dmem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:dmem|mem_rtl_0_bypass[31]         ; memorySystem:mem|memory256x16:dmem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:dmem|mem_rtl_0_bypass[32]         ; memorySystem:mem|memory256x16:dmem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:smem|mem_rtl_0_bypass[0]          ; memorySystem:mem|memory256x16:smem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:smem|mem_rtl_0_bypass[1]          ; memorySystem:mem|memory256x16:smem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:smem|mem_rtl_0_bypass[2]          ; memorySystem:mem|memory256x16:smem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:smem|mem_rtl_0_bypass[3]          ; memorySystem:mem|memory256x16:smem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:smem|mem_rtl_0_bypass[4]          ; memorySystem:mem|memory256x16:smem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:smem|mem_rtl_0_bypass[5]          ; memorySystem:mem|memory256x16:smem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:smem|mem_rtl_0_bypass[6]          ; memorySystem:mem|memory256x16:smem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:smem|mem_rtl_0_bypass[7]          ; memorySystem:mem|memory256x16:smem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:smem|mem_rtl_0_bypass[8]          ; memorySystem:mem|memory256x16:smem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:smem|mem_rtl_0_bypass[9]          ; memorySystem:mem|memory256x16:smem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:smem|mem_rtl_0_bypass[10]         ; memorySystem:mem|memory256x16:smem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:smem|mem_rtl_0_bypass[11]         ; memorySystem:mem|memory256x16:smem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:smem|mem_rtl_0_bypass[12]         ; memorySystem:mem|memory256x16:smem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:smem|mem_rtl_0_bypass[13]         ; memorySystem:mem|memory256x16:smem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:smem|mem_rtl_0_bypass[14]         ; memorySystem:mem|memory256x16:smem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:smem|mem_rtl_0_bypass[15]         ; memorySystem:mem|memory256x16:smem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:smem|mem_rtl_0_bypass[16]         ; memorySystem:mem|memory256x16:smem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:smem|mem_rtl_0_bypass[17]         ; memorySystem:mem|memory256x16:smem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:smem|mem_rtl_0_bypass[18]         ; memorySystem:mem|memory256x16:smem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:smem|mem_rtl_0_bypass[19]         ; memorySystem:mem|memory256x16:smem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:smem|mem_rtl_0_bypass[20]         ; memorySystem:mem|memory256x16:smem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:smem|mem_rtl_0_bypass[21]         ; memorySystem:mem|memory256x16:smem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:smem|mem_rtl_0_bypass[22]         ; memorySystem:mem|memory256x16:smem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:smem|mem_rtl_0_bypass[23]         ; memorySystem:mem|memory256x16:smem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:smem|mem_rtl_0_bypass[24]         ; memorySystem:mem|memory256x16:smem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:smem|mem_rtl_0_bypass[25]         ; memorySystem:mem|memory256x16:smem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:smem|mem_rtl_0_bypass[26]         ; memorySystem:mem|memory256x16:smem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:smem|mem_rtl_0_bypass[27]         ; memorySystem:mem|memory256x16:smem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:smem|mem_rtl_0_bypass[28]         ; memorySystem:mem|memory256x16:smem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:smem|mem_rtl_0_bypass[29]         ; memorySystem:mem|memory256x16:smem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:smem|mem_rtl_0_bypass[30]         ; memorySystem:mem|memory256x16:smem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:smem|mem_rtl_0_bypass[31]         ; memorySystem:mem|memory256x16:smem|mem_rtl_0         ;
+; memorySystem:mem|memory256x16:smem|mem_rtl_0_bypass[32]         ; memorySystem:mem|memory256x16:smem|mem_rtl_0         ;
++-----------------------------------------------------------------+------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |p18240_top|Mux15                                  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |p18240_top|memorySystem:mem|memory256x16:dmem|mem ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |p18240_top|memorySystem:mem|memory256x16:smem|mem ;
+; 11:1               ; 16 bits   ; 112 LEs       ; 112 LEs              ; 0 LEs                  ; No         ; |p18240_top|datapath:dp|mux4to1:MuxB|Selector7     ;
+; 11:1               ; 16 bits   ; 112 LEs       ; 112 LEs              ; 0 LEs                  ; No         ; |p18240_top|datapath:dp|mux4to1:MuxA|Selector1     ;
+; 14:1               ; 15 bits   ; 135 LEs       ; 135 LEs              ; 0 LEs                  ; No         ; |p18240_top|datapath:dp|alu:alu_dp|Selector0       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Source assignments for memorySystem:mem|memory256x16_program:pmem|altsyncram:mem_rtl_0|altsyncram_imj1:auto_generated ;
++---------------------------------+--------------------+------+---------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                      ;
++---------------------------------+--------------------+------+---------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                       ;
++---------------------------------+--------------------+------+---------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Source assignments for memorySystem:mem|memory256x16:dmem|altsyncram:mem_rtl_0|altsyncram_nvd1:auto_generated ;
++---------------------------------+--------------------+------+-------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                              ;
++---------------------------------+--------------------+------+-------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                               ;
++---------------------------------+--------------------+------+-------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Source assignments for memorySystem:mem|memory256x16:smem|altsyncram:mem_rtl_0|altsyncram_nvd1:auto_generated ;
++---------------------------------+--------------------+------+-------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                              ;
++---------------------------------+--------------------+------+-------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                               ;
++---------------------------------+--------------------+------+-------------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|mux8to1:REG1A ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; WIDTH          ; 3     ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|mux8to1:REG1B ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; WIDTH          ; 3     ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|reg_file:rfile|register:reg0 ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|reg_file:rfile|register:reg1 ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|reg_file:rfile|register:reg2 ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|reg_file:rfile|register:reg3 ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|reg_file:rfile|register:reg4 ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|reg_file:rfile|register:reg5 ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|reg_file:rfile|register:reg6 ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|reg_file:rfile|register:reg7 ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|reg_file:rfile|demux:reg_en_decoder ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; OUT_WIDTH      ; 8     ; Signed Integer                                                      ;
+; IN_WIDTH       ; 3     ; Signed Integer                                                      ;
+; DEFAULT        ; 1     ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|reg_file:rfile|mux8to1:muxA ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|reg_file:rfile|mux8to1:muxB ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|tridrive:a ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|tridrive:b ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|tridrive:c ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|mux4to1:MuxA ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|mux4to1:MuxB ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|demux:reg_load_decoder ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; OUT_WIDTH      ; 6     ; Signed Integer                                         ;
+; IN_WIDTH       ; 3     ; Signed Integer                                         ;
+; DEFAULT        ; 1     ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|register:pcReg ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|register:memDataReg ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|register:memAddrReg ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|register:instrReg ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|register:spReg ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|register:condCodeReg ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; WIDTH          ; 4     ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|tridrive:from_SW ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|register:comb_24 ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: memorySystem:mem|memory256x16_program:pmem|altsyncram:mem_rtl_0 ;
++------------------------------------+----------------------------------------------------------+------------------+
+; Parameter Name                     ; Value                                                    ; Type             ;
++------------------------------------+----------------------------------------------------------+------------------+
+; BYTE_SIZE_BLOCK                    ; 8                                                        ; Untyped          ;
+; AUTO_CARRY_CHAINS                  ; ON                                                       ; AUTO_CARRY       ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                                      ; IGNORE_CARRY     ;
+; AUTO_CASCADE_CHAINS                ; ON                                                       ; AUTO_CASCADE     ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                                      ; IGNORE_CASCADE   ;
+; WIDTH_BYTEENA                      ; 1                                                        ; Untyped          ;
+; OPERATION_MODE                     ; DUAL_PORT                                                ; Untyped          ;
+; WIDTH_A                            ; 16                                                       ; Untyped          ;
+; WIDTHAD_A                          ; 8                                                        ; Untyped          ;
+; NUMWORDS_A                         ; 256                                                      ; Untyped          ;
+; OUTDATA_REG_A                      ; UNREGISTERED                                             ; Untyped          ;
+; ADDRESS_ACLR_A                     ; NONE                                                     ; Untyped          ;
+; OUTDATA_ACLR_A                     ; NONE                                                     ; Untyped          ;
+; WRCONTROL_ACLR_A                   ; NONE                                                     ; Untyped          ;
+; INDATA_ACLR_A                      ; NONE                                                     ; Untyped          ;
+; BYTEENA_ACLR_A                     ; NONE                                                     ; Untyped          ;
+; WIDTH_B                            ; 16                                                       ; Untyped          ;
+; WIDTHAD_B                          ; 8                                                        ; Untyped          ;
+; NUMWORDS_B                         ; 256                                                      ; Untyped          ;
+; INDATA_REG_B                       ; CLOCK1                                                   ; Untyped          ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                                   ; Untyped          ;
+; RDCONTROL_REG_B                    ; CLOCK1                                                   ; Untyped          ;
+; ADDRESS_REG_B                      ; CLOCK0                                                   ; Untyped          ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                             ; Untyped          ;
+; BYTEENA_REG_B                      ; CLOCK1                                                   ; Untyped          ;
+; INDATA_ACLR_B                      ; NONE                                                     ; Untyped          ;
+; WRCONTROL_ACLR_B                   ; NONE                                                     ; Untyped          ;
+; ADDRESS_ACLR_B                     ; NONE                                                     ; Untyped          ;
+; OUTDATA_ACLR_B                     ; NONE                                                     ; Untyped          ;
+; RDCONTROL_ACLR_B                   ; NONE                                                     ; Untyped          ;
+; BYTEENA_ACLR_B                     ; NONE                                                     ; Untyped          ;
+; WIDTH_BYTEENA_A                    ; 1                                                        ; Untyped          ;
+; WIDTH_BYTEENA_B                    ; 1                                                        ; Untyped          ;
+; RAM_BLOCK_TYPE                     ; AUTO                                                     ; Untyped          ;
+; BYTE_SIZE                          ; 8                                                        ; Untyped          ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                ; Untyped          ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                                     ; Untyped          ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                                     ; Untyped          ;
+; INIT_FILE                          ; db/p18240_top.ram0_memory256x16_program_6357e339.hdl.mif ; Untyped          ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                                   ; Untyped          ;
+; MAXIMUM_DEPTH                      ; 0                                                        ; Untyped          ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                                   ; Untyped          ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                                   ; Untyped          ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                                   ; Untyped          ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                                   ; Untyped          ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                          ; Untyped          ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                          ; Untyped          ;
+; ENABLE_ECC                         ; FALSE                                                    ; Untyped          ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                                    ; Untyped          ;
+; WIDTH_ECCSTATUS                    ; 3                                                        ; Untyped          ;
+; DEVICE_FAMILY                      ; Cyclone IV E                                             ; Untyped          ;
+; CBXI_PARAMETER                     ; altsyncram_imj1                                          ; Untyped          ;
++------------------------------------+----------------------------------------------------------+------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: memorySystem:mem|memory256x16:dmem|altsyncram:mem_rtl_0 ;
++------------------------------------+----------------------+----------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                         ;
++------------------------------------+----------------------+----------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                      ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                               ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                      ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                      ;
+; WIDTH_A                            ; 16                   ; Untyped                                      ;
+; WIDTHAD_A                          ; 8                    ; Untyped                                      ;
+; NUMWORDS_A                         ; 256                  ; Untyped                                      ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                      ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                      ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                      ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                      ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                      ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                      ;
+; WIDTH_B                            ; 16                   ; Untyped                                      ;
+; WIDTHAD_B                          ; 8                    ; Untyped                                      ;
+; NUMWORDS_B                         ; 256                  ; Untyped                                      ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                      ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                      ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                      ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                                      ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                      ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                      ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                      ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                      ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                      ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                      ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                      ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                      ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                      ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                      ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                      ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                      ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                      ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                      ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                      ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                      ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                      ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                      ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                      ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                      ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                      ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                      ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                      ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                      ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                      ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                      ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                      ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                      ;
+; CBXI_PARAMETER                     ; altsyncram_nvd1      ; Untyped                                      ;
++------------------------------------+----------------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: memorySystem:mem|memory256x16:smem|altsyncram:mem_rtl_0 ;
++------------------------------------+----------------------+----------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                         ;
++------------------------------------+----------------------+----------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                      ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                               ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                      ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                      ;
+; WIDTH_A                            ; 16                   ; Untyped                                      ;
+; WIDTHAD_A                          ; 8                    ; Untyped                                      ;
+; NUMWORDS_A                         ; 256                  ; Untyped                                      ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                      ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                      ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                      ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                      ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                      ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                      ;
+; WIDTH_B                            ; 16                   ; Untyped                                      ;
+; WIDTHAD_B                          ; 8                    ; Untyped                                      ;
+; NUMWORDS_B                         ; 256                  ; Untyped                                      ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                      ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                      ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                      ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                                      ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                      ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                      ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                      ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                      ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                      ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                      ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                      ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                      ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                      ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                      ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                      ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                      ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                      ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                      ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                      ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                      ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                      ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                      ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                      ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                      ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                      ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                      ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                      ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                      ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                      ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                      ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                      ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                      ;
+; CBXI_PARAMETER                     ; altsyncram_nvd1      ; Untyped                                      ;
++------------------------------------+----------------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                            ;
++-------------------------------------------+-----------------------------------------------------------------+
+; Name                                      ; Value                                                           ;
++-------------------------------------------+-----------------------------------------------------------------+
+; Number of entity instances                ; 3                                                               ;
+; Entity Instance                           ; memorySystem:mem|memory256x16_program:pmem|altsyncram:mem_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                       ;
+;     -- WIDTH_A                            ; 16                                                              ;
+;     -- NUMWORDS_A                         ; 256                                                             ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                    ;
+;     -- WIDTH_B                            ; 16                                                              ;
+;     -- NUMWORDS_B                         ; 256                                                             ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                          ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                    ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                            ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                       ;
+; Entity Instance                           ; memorySystem:mem|memory256x16:dmem|altsyncram:mem_rtl_0         ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                       ;
+;     -- WIDTH_A                            ; 16                                                              ;
+;     -- NUMWORDS_A                         ; 256                                                             ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                    ;
+;     -- WIDTH_B                            ; 16                                                              ;
+;     -- NUMWORDS_B                         ; 256                                                             ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                          ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                    ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                            ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                       ;
+; Entity Instance                           ; memorySystem:mem|memory256x16:smem|altsyncram:mem_rtl_0         ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                       ;
+;     -- WIDTH_A                            ; 16                                                              ;
+;     -- NUMWORDS_A                         ; 256                                                             ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                    ;
+;     -- WIDTH_B                            ; 16                                                              ;
+;     -- NUMWORDS_B                         ; 256                                                             ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                          ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                    ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                            ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                       ;
++-------------------------------------------+-----------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Port Connectivity Checks: "SevenSegmentControl:ssc" ;
++---------+-------+----------+------------------------+
+; Port    ; Type  ; Severity ; Details                ;
++---------+-------+----------+------------------------+
+; turn_on ; Input ; Info     ; Stuck at VCC           ;
++---------+-------+----------+------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:dp|register:comb_24"                                                       ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:dp|demux:reg_load_decoder" ;
++------+-------+----------+--------------------------------------+
+; Port ; Type  ; Severity ; Details                              ;
++------+-------+----------+--------------------------------------+
+; in   ; Input ; Info     ; Stuck at GND                         ;
++------+-------+----------+--------------------------------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "datapath:dp|mux8to1:REG1B" ;
++-----------+-------+----------+------------------------+
+; Port      ; Type  ; Severity ; Details                ;
++-----------+-------+----------+------------------------+
+; inA[2..1] ; Input ; Info     ; Stuck at GND           ;
+; inA[0]    ; Input ; Info     ; Stuck at VCC           ;
+; inB[2]    ; Input ; Info     ; Stuck at GND           ;
+; inB[1]    ; Input ; Info     ; Stuck at VCC           ;
+; inB[0]    ; Input ; Info     ; Stuck at GND           ;
+; inC[1..0] ; Input ; Info     ; Stuck at VCC           ;
+; inC[2]    ; Input ; Info     ; Stuck at GND           ;
+; inD[1..0] ; Input ; Info     ; Stuck at GND           ;
+; inD[2]    ; Input ; Info     ; Stuck at VCC           ;
+; inE[2]    ; Input ; Info     ; Stuck at VCC           ;
+; inE[1]    ; Input ; Info     ; Stuck at GND           ;
+; inE[0]    ; Input ; Info     ; Stuck at VCC           ;
+; inF[2..1] ; Input ; Info     ; Stuck at VCC           ;
+; inF[0]    ; Input ; Info     ; Stuck at GND           ;
+; inG       ; Input ; Info     ; Stuck at VCC           ;
+; inH       ; Input ; Info     ; Stuck at GND           ;
++-----------+-------+----------+------------------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "datapath:dp|mux8to1:REG1A" ;
++-----------+-------+----------+------------------------+
+; Port      ; Type  ; Severity ; Details                ;
++-----------+-------+----------+------------------------+
+; inA[2..1] ; Input ; Info     ; Stuck at GND           ;
+; inA[0]    ; Input ; Info     ; Stuck at VCC           ;
+; inB[2]    ; Input ; Info     ; Stuck at GND           ;
+; inB[1]    ; Input ; Info     ; Stuck at VCC           ;
+; inB[0]    ; Input ; Info     ; Stuck at GND           ;
+; inC[1..0] ; Input ; Info     ; Stuck at VCC           ;
+; inC[2]    ; Input ; Info     ; Stuck at GND           ;
+; inD[1..0] ; Input ; Info     ; Stuck at GND           ;
+; inD[2]    ; Input ; Info     ; Stuck at VCC           ;
+; inE[2]    ; Input ; Info     ; Stuck at VCC           ;
+; inE[1]    ; Input ; Info     ; Stuck at GND           ;
+; inE[0]    ; Input ; Info     ; Stuck at VCC           ;
+; inF[2..1] ; Input ; Info     ; Stuck at VCC           ;
+; inF[0]    ; Input ; Info     ; Stuck at GND           ;
+; inG       ; Input ; Info     ; Stuck at VCC           ;
+; inH       ; Input ; Info     ; Stuck at GND           ;
++-----------+-------+----------+------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:dp"                                                                                    ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port             ; Type   ; Severity ; Details                                                                             ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; sp               ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; aluSrcA          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; aluSrcB          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; viewReg[127..64] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; aluResult        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; regSelA          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; regSelB          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; LEDR             ; Input  ; Info     ; Stuck at GND                                                                        ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "controlpath:cp"                                                                          ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; currState ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; nextState ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:04     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 12.1 Build 177 11/07/2012 SJ Full Version
+    Info: Processing started: Tue Dec  6 17:05:52 2016
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off p18240_top -c p18240_top
+Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file regfile.sv
+    Info (12023): Found entity 1: reg_file
+Info (12021): Found 1 design units, including 1 entities, in source file p18240.sv
+    Info (12023): Found entity 1: p18240_top
+Info (12021): Found 2 design units, including 2 entities, in source file memory.sv
+    Info (12023): Found entity 1: memory_simulation
+    Info (12023): Found entity 2: memorySystem
+Info (12021): Found 12 design units, including 12 entities, in source file library.sv
+    Info (12023): Found entity 1: memory256x16
+    Info (12023): Found entity 2: memory256x16_program
+    Info (12023): Found entity 3: tridrive
+    Info (12023): Found entity 4: mux4to1
+    Info (12023): Found entity 5: mux8to1
+    Info (12023): Found entity 6: demux
+    Info (12023): Found entity 7: register
+    Info (12023): Found entity 8: counter
+    Info (12023): Found entity 9: range_check
+    Info (12023): Found entity 10: HEXtoSevenSegment
+    Info (12023): Found entity 11: SevenSegmentDigit
+    Info (12023): Found entity 12: SevenSegmentControl
+Info (12021): Found 8 design units, including 8 entities, in source file display.sv
+    Info (12023): Found entity 1: cram
+    Info (12023): Found entity 2: vram
+    Info (12023): Found entity 3: display_controller
+    Info (12023): Found entity 4: vga_controller
+    Info (12023): Found entity 5: color_LUT
+    Info (12023): Found entity 6: fake_char_memory
+    Info (12023): Found entity 7: character_rom
+    Info (12023): Found entity 8: delay_cycles
+Info (12021): Found 1 design units, including 1 entities, in source file datapath.sv
+    Info (12023): Found entity 1: datapath
+Info (12021): Found 1 design units, including 1 entities, in source file controlpath.sv
+    Info (12023): Found entity 1: controlpath
+Info (12021): Found 0 design units, including 0 entities, in source file constants.sv
+Info (12021): Found 1 design units, including 1 entities, in source file alu.sv
+    Info (12023): Found entity 1: alu
+Critical Warning (10846): Verilog HDL Instantiation warning at datapath.sv(115): instance has no name
+Info (12127): Elaborating entity "p18240_top" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at p18240.sv(63): object "r7" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at p18240.sv(63): object "r6" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at p18240.sv(63): object "r5" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at p18240.sv(63): object "r4" assigned a value but never read
+Warning (10030): Net "LEDR[15..0]" at p18240.sv(49) has no driver or initial value, using a default initial value '0'
+Warning (10034): Output port "VGA_R" at p18240.sv(50) has no driver
+Warning (10034): Output port "VGA_G" at p18240.sv(50) has no driver
+Warning (10034): Output port "VGA_B" at p18240.sv(50) has no driver
+Warning (10034): Output port "VGA_BLANK_N" at p18240.sv(51) has no driver
+Warning (10034): Output port "VGA_CLK" at p18240.sv(51) has no driver
+Warning (10034): Output port "VGA_SYNC_N" at p18240.sv(51) has no driver
+Warning (10034): Output port "VGA_VS" at p18240.sv(52) has no driver
+Warning (10034): Output port "VGA_HS" at p18240.sv(52) has no driver
+Info (12128): Elaborating entity "controlpath" for hierarchy "controlpath:cp"
+Info (12128): Elaborating entity "datapath" for hierarchy "datapath:dp"
+Info (12128): Elaborating entity "mux8to1" for hierarchy "datapath:dp|mux8to1:REG1A"
+Warning (10230): Verilog HDL assignment warning at library.sv(143): truncated value with size 32 to match size of target (3)
+Info (12128): Elaborating entity "reg_file" for hierarchy "datapath:dp|reg_file:rfile"
+Info (12128): Elaborating entity "register" for hierarchy "datapath:dp|reg_file:rfile|register:reg0"
+Info (12128): Elaborating entity "demux" for hierarchy "datapath:dp|reg_file:rfile|demux:reg_en_decoder"
+Warning (10230): Verilog HDL assignment warning at library.sv(164): truncated value with size 32 to match size of target (8)
+Info (12128): Elaborating entity "mux8to1" for hierarchy "datapath:dp|reg_file:rfile|mux8to1:muxA"
+Warning (10230): Verilog HDL assignment warning at library.sv(143): truncated value with size 32 to match size of target (16)
+Info (12128): Elaborating entity "tridrive" for hierarchy "datapath:dp|tridrive:a"
+Warning (10230): Verilog HDL assignment warning at library.sv(95): truncated value with size 32 to match size of target (16)
+Info (12128): Elaborating entity "mux4to1" for hierarchy "datapath:dp|mux4to1:MuxA"
+Warning (10230): Verilog HDL assignment warning at library.sv(118): truncated value with size 32 to match size of target (16)
+Info (12128): Elaborating entity "alu" for hierarchy "datapath:dp|alu:alu_dp"
+Warning (10230): Verilog HDL assignment warning at alu.sv(51): truncated value with size 32 to match size of target (17)
+Warning (10230): Verilog HDL assignment warning at alu.sv(59): truncated value with size 32 to match size of target (17)
+Warning (10230): Verilog HDL assignment warning at alu.sv(63): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at alu.sv(73): truncated value with size 32 to match size of target (17)
+Warning (10230): Verilog HDL assignment warning at alu.sv(107): truncated value with size 32 to match size of target (1)
+Info (12128): Elaborating entity "demux" for hierarchy "datapath:dp|demux:reg_load_decoder"
+Warning (10230): Verilog HDL assignment warning at library.sv(164): truncated value with size 32 to match size of target (6)
+Info (12128): Elaborating entity "register" for hierarchy "datapath:dp|register:condCodeReg"
+Info (12128): Elaborating entity "memorySystem" for hierarchy "memorySystem:mem"
+Info (12128): Elaborating entity "memory256x16_program" for hierarchy "memorySystem:mem|memory256x16_program:pmem"
+Warning (10850): Verilog HDL warning at library.sv(79): number of words (8193) in memory file does not match the number of elements in the address range [0:255]
+Info (12128): Elaborating entity "memory256x16" for hierarchy "memorySystem:mem|memory256x16:dmem"
+Info (12128): Elaborating entity "SevenSegmentControl" for hierarchy "SevenSegmentControl:ssc"
+Info (12128): Elaborating entity "SevenSegmentDigit" for hierarchy "SevenSegmentControl:ssc|SevenSegmentDigit:ssd0"
+Info (12128): Elaborating entity "HEXtoSevenSegment" for hierarchy "SevenSegmentControl:ssc|SevenSegmentDigit:ssd0|HEXtoSevenSegment:h2ss"
+Warning (276020): Inferred RAM node "memorySystem:mem|memory256x16_program:pmem|mem_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Warning (276020): Inferred RAM node "memorySystem:mem|memory256x16:dmem|mem_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Warning (276020): Inferred RAM node "memorySystem:mem|memory256x16:smem|mem_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Info (19000): Inferred 3 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "memorySystem:mem|memory256x16_program:pmem|mem_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 16
+        Info (286033): Parameter WIDTHAD_A set to 8
+        Info (286033): Parameter NUMWORDS_A set to 256
+        Info (286033): Parameter WIDTH_B set to 16
+        Info (286033): Parameter WIDTHAD_B set to 8
+        Info (286033): Parameter NUMWORDS_B set to 256
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/p18240_top.ram0_memory256x16_program_6357e339.hdl.mif
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "memorySystem:mem|memory256x16:dmem|mem_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 16
+        Info (286033): Parameter WIDTHAD_A set to 8
+        Info (286033): Parameter NUMWORDS_A set to 256
+        Info (286033): Parameter WIDTH_B set to 16
+        Info (286033): Parameter WIDTHAD_B set to 8
+        Info (286033): Parameter NUMWORDS_B set to 256
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "memorySystem:mem|memory256x16:smem|mem_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 16
+        Info (286033): Parameter WIDTHAD_A set to 8
+        Info (286033): Parameter NUMWORDS_A set to 256
+        Info (286033): Parameter WIDTH_B set to 16
+        Info (286033): Parameter WIDTHAD_B set to 8
+        Info (286033): Parameter NUMWORDS_B set to 256
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+Info (12130): Elaborated megafunction instantiation "memorySystem:mem|memory256x16_program:pmem|altsyncram:mem_rtl_0"
+Info (12133): Instantiated megafunction "memorySystem:mem|memory256x16_program:pmem|altsyncram:mem_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "16"
+    Info (12134): Parameter "WIDTHAD_A" = "8"
+    Info (12134): Parameter "NUMWORDS_A" = "256"
+    Info (12134): Parameter "WIDTH_B" = "16"
+    Info (12134): Parameter "WIDTHAD_B" = "8"
+    Info (12134): Parameter "NUMWORDS_B" = "256"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/p18240_top.ram0_memory256x16_program_6357e339.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_imj1.tdf
+    Info (12023): Found entity 1: altsyncram_imj1
+Info (12130): Elaborated megafunction instantiation "memorySystem:mem|memory256x16:dmem|altsyncram:mem_rtl_0"
+Info (12133): Instantiated megafunction "memorySystem:mem|memory256x16:dmem|altsyncram:mem_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "16"
+    Info (12134): Parameter "WIDTHAD_A" = "8"
+    Info (12134): Parameter "NUMWORDS_A" = "256"
+    Info (12134): Parameter "WIDTH_B" = "16"
+    Info (12134): Parameter "WIDTHAD_B" = "8"
+    Info (12134): Parameter "NUMWORDS_B" = "256"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_nvd1.tdf
+    Info (12023): Found entity 1: altsyncram_nvd1
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:a|bus[12]" to the node "datapath:dp|register:memDataReg|out[12]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:a|bus[13]" to the node "datapath:dp|register:memDataReg|out[13]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:a|bus[14]" to the node "datapath:dp|register:memDataReg|out[14]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:a|bus[15]" to the node "datapath:dp|register:memDataReg|out[15]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:a|bus[8]" to the node "datapath:dp|register:memDataReg|out[8]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:a|bus[9]" to the node "datapath:dp|register:memDataReg|out[9]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:a|bus[10]" to the node "datapath:dp|register:memDataReg|out[10]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:a|bus[11]" to the node "datapath:dp|register:memDataReg|out[11]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:a|bus[4]" to the node "datapath:dp|register:memDataReg|out[4]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:a|bus[5]" to the node "datapath:dp|register:memDataReg|out[5]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:a|bus[6]" to the node "datapath:dp|register:memDataReg|out[6]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:a|bus[7]" to the node "datapath:dp|register:memDataReg|out[7]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:a|bus[0]" to the node "datapath:dp|register:memDataReg|out[0]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:a|bus[1]" to the node "datapath:dp|register:memDataReg|out[1]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:a|bus[2]" to the node "datapath:dp|register:memDataReg|out[2]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:a|bus[3]" to the node "datapath:dp|register:memDataReg|out[3]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:c|bus[12]" to the node "memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[41]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:c|bus[13]" to the node "memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[43]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:c|bus[14]" to the node "memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[45]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:c|bus[15]" to the node "memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[47]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:c|bus[8]" to the node "memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[33]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:c|bus[9]" to the node "memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[35]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:c|bus[10]" to the node "memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[37]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:c|bus[11]" to the node "memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[39]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:c|bus[4]" to the node "memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[25]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:c|bus[5]" to the node "memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[27]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:c|bus[6]" to the node "memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[29]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:c|bus[7]" to the node "memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[31]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:c|bus[0]" to the node "memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[17]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:c|bus[1]" to the node "memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[19]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:c|bus[2]" to the node "memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[21]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:c|bus[3]" to the node "memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[23]" into an OR gate
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDR[0]" is stuck at GND
+    Warning (13410): Pin "LEDR[1]" is stuck at GND
+    Warning (13410): Pin "LEDR[2]" is stuck at GND
+    Warning (13410): Pin "LEDR[3]" is stuck at GND
+    Warning (13410): Pin "LEDR[4]" is stuck at GND
+    Warning (13410): Pin "LEDR[5]" is stuck at GND
+    Warning (13410): Pin "LEDR[6]" is stuck at GND
+    Warning (13410): Pin "LEDR[7]" is stuck at GND
+    Warning (13410): Pin "LEDR[8]" is stuck at GND
+    Warning (13410): Pin "LEDR[9]" is stuck at GND
+    Warning (13410): Pin "LEDR[10]" is stuck at GND
+    Warning (13410): Pin "LEDR[11]" is stuck at GND
+    Warning (13410): Pin "LEDR[12]" is stuck at GND
+    Warning (13410): Pin "LEDR[13]" is stuck at GND
+    Warning (13410): Pin "LEDR[14]" is stuck at GND
+    Warning (13410): Pin "LEDR[15]" is stuck at GND
+    Warning (13410): Pin "VGA_R[0]" is stuck at GND
+    Warning (13410): Pin "VGA_R[1]" is stuck at GND
+    Warning (13410): Pin "VGA_R[2]" is stuck at GND
+    Warning (13410): Pin "VGA_R[3]" is stuck at GND
+    Warning (13410): Pin "VGA_R[4]" is stuck at GND
+    Warning (13410): Pin "VGA_R[5]" is stuck at GND
+    Warning (13410): Pin "VGA_R[6]" is stuck at GND
+    Warning (13410): Pin "VGA_R[7]" is stuck at GND
+    Warning (13410): Pin "VGA_G[0]" is stuck at GND
+    Warning (13410): Pin "VGA_G[1]" is stuck at GND
+    Warning (13410): Pin "VGA_G[2]" is stuck at GND
+    Warning (13410): Pin "VGA_G[3]" is stuck at GND
+    Warning (13410): Pin "VGA_G[4]" is stuck at GND
+    Warning (13410): Pin "VGA_G[5]" is stuck at GND
+    Warning (13410): Pin "VGA_G[6]" is stuck at GND
+    Warning (13410): Pin "VGA_G[7]" is stuck at GND
+    Warning (13410): Pin "VGA_B[0]" is stuck at GND
+    Warning (13410): Pin "VGA_B[1]" is stuck at GND
+    Warning (13410): Pin "VGA_B[2]" is stuck at GND
+    Warning (13410): Pin "VGA_B[3]" is stuck at GND
+    Warning (13410): Pin "VGA_B[4]" is stuck at GND
+    Warning (13410): Pin "VGA_B[5]" is stuck at GND
+    Warning (13410): Pin "VGA_B[6]" is stuck at GND
+    Warning (13410): Pin "VGA_B[7]" is stuck at GND
+    Warning (13410): Pin "VGA_BLANK_N" is stuck at GND
+    Warning (13410): Pin "VGA_CLK" is stuck at GND
+    Warning (13410): Pin "VGA_SYNC_N" is stuck at GND
+    Warning (13410): Pin "VGA_VS" is stuck at GND
+    Warning (13410): Pin "VGA_HS" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file /afs/ece.cmu.edu/usr/shulij/Private/18240lab4test/output_files/p18240_top.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[2]"
+    Warning (15610): No output dependent on input pin "KEY[3]"
+    Warning (15610): No output dependent on input pin "CLOCK_50"
+Info (21057): Implemented 1763 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 23 input pins
+    Info (21059): Implemented 103 output pins
+    Info (21061): Implemented 1589 logic cells
+    Info (21064): Implemented 48 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 112 warnings
+    Info: Peak virtual memory: 703 megabytes
+    Info: Processing ended: Tue Dec  6 17:05:58 2016
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:06
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in /afs/ece.cmu.edu/usr/shulij/Private/18240lab4test/output_files/p18240_top.map.smsg.
+
+

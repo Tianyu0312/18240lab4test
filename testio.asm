@@ -1,7 +1,7 @@
         .ORG $0000
-        LDA R0, mm
+        LDA R0, $2000
         STOP
         
         .ORG $2000
-mm      .DW $ABCD
+        .DW $ABCD
         
