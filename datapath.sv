@@ -38,6 +38,8 @@ module datapath (
    input controlPts  cPts,
    input         clock,
    input         reset_L,
+   input logic [15:0] SW,
+   input logic [15:0] LEDR,
    input logic ADD32sel); //new input!
    logic [15:0] regA, regB;
    logic [15:0] memOut;
@@ -102,5 +104,15 @@ module datapath (
    
    register #(.WIDTH(4)) condCodeReg(.out(condCodes), .in(newCC), .load_L(cPts.lcc_L),
                                      .clock(clock), .reset_L(reset_L));
+
+  //Read 2000:
+   logic drive_SW_L;
+ assign drive_SW_L = (cPts.re_L & (memAddr == 16'h2000)) ? 1'b0; 1'b1;
+ tridrive #(.WIDTH(16)) from_SW(.data(SW), .bus(newMDR), .en_L(drive_SW_L));
+ //Write 2000:
+ logic load2000_L;
+ assign load2000_L = (cPts.we_L & (memAddr == 16'h2000)) ? 1'b0: 1'b1;
+ register #(16) (.out(LEDR[15:0]), .clock(clock),.reset_L(reset_L),.load_L(), .in(MDRout));
+ 
    
 endmodule 
