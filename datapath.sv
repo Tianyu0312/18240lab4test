@@ -107,7 +107,7 @@ module datapath (
 
   //Read 2000:
    logic drive_SW_L;
- assign drive_SW_L = (cPts.re_L & (memAddr == 16'h2000)) ? 1'b0; 1'b1;
+ assign drive_SW_L = (cPts.re_L & (memAddr == 16'h2000)) ? 1'b0: 1'b1;
  tridrive #(.WIDTH(16)) from_SW(.data(SW), .bus(newMDR), .en_L(drive_SW_L));
  //Write 2000:
  logic load2000_L;
