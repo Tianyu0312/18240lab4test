@@ -113,7 +113,9 @@ logic sel;
               .regSelB(regSelB),
               .cPts(cPts),
               .clock(clock),
-              .reset_L(reset_L));
+	   .reset_L(reset_L),
+	   .SW(SW[15:0]),
+	   .LEDR(LEDR[15:0]));
 
    memorySystem mem(
                    .data(dataBus),
