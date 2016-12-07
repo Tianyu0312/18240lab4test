@@ -95,9 +95,9 @@ logic sel;
                  .reset_L(reset_L),
                  .currState(currState),
                  .nextState(nextState));
-
+	logic [15:0] disp;
    datapath dp(
-.ADD32sel(sel),
+              .ADD32sel(sel),
               .ir(ir),
               .sp(sp),
               .condCodes(condCodes),
@@ -113,9 +113,10 @@ logic sel;
               .regSelB(regSelB),
               .cPts(cPts),
               .clock(clock),
-	   .reset_L(reset_L),
-	   .SW(SW[15:0]),
-	   .LEDR(LEDR[15:0]));
+	      .reset_L(reset_L),
+	      .SW(SW[15:0]),
+	   .LEDR_(disp));
+	assign LEDR[15:0] = disp;
 
    memorySystem mem(
                    .data(dataBus),
