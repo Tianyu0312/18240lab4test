@@ -19,7 +19,7 @@
  */
 
 // Comment this line when simulating, uncomment when synthesizing.
-//`define synthesis
+`define synthesis
 
 // Uncomment this line for a vga debug dispay (Not guaranteed to be bug free)
 //`define vga_display
