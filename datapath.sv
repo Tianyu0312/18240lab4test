@@ -39,7 +39,7 @@ module datapath (
    input         clock,
    input         reset_L,
    input logic [15:0] SW,
-   output logic [15:0] LEDR,
+   output logic [15:0] LEDR_,
    input logic ADD32sel); //new input!
    logic [15:0] regA, regB;
    logic [15:0] memOut;
