@@ -1,5 +1,5 @@
 Analysis & Synthesis report for p18240_top
-Tue Dec  6 21:32:06 2016
+Tue Dec  6 22:17:18 2016
 Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Full Version
 
 
@@ -53,15 +53,14 @@ Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Full Version
  45. Parameter Settings for Inferred Entity Instance: memorySystem:mem|memory256x16:smem|altsyncram:mem_rtl_0
  46. altsyncram Parameter Settings by Entity Instance
  47. Port Connectivity Checks: "SevenSegmentControl:ssc"
- 48. Port Connectivity Checks: "datapath:dp|register:to_LED"
- 49. Port Connectivity Checks: "datapath:dp|demux:reg_load_decoder"
- 50. Port Connectivity Checks: "datapath:dp|mux8to1:REG1B"
- 51. Port Connectivity Checks: "datapath:dp|mux8to1:REG1A"
- 52. Port Connectivity Checks: "datapath:dp"
- 53. Port Connectivity Checks: "controlpath:cp"
- 54. Elapsed Time Per Partition
- 55. Analysis & Synthesis Messages
- 56. Analysis & Synthesis Suppressed Messages
+ 48. Port Connectivity Checks: "datapath:dp|demux:reg_load_decoder"
+ 49. Port Connectivity Checks: "datapath:dp|mux8to1:REG1B"
+ 50. Port Connectivity Checks: "datapath:dp|mux8to1:REG1A"
+ 51. Port Connectivity Checks: "datapath:dp"
+ 52. Port Connectivity Checks: "controlpath:cp"
+ 53. Elapsed Time Per Partition
+ 54. Analysis & Synthesis Messages
+ 55. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -87,15 +86,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +------------------------------------+-------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Dec  6 21:32:06 2016     ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec  6 22:17:18 2016     ;
 ; Quartus II 64-Bit Version          ; 12.1 Build 177 11/07/2012 SJ Full Version ;
 ; Revision Name                      ; p18240_top                                ;
 ; Top-level Entity Name              ; p18240_top                                ;
 ; Family                             ; Cyclone IV E                              ;
-; Total logic elements               ; 1,551                                     ;
-;     Total combinational functions  ; 1,231                                     ;
-;     Dedicated logic registers      ; 388                                       ;
-; Total registers                    ; 388                                       ;
+; Total logic elements               ; 1,559                                     ;
+;     Total combinational functions  ; 1,223                                     ;
+;     Dedicated logic registers      ; 404                                       ;
+; Total registers                    ; 404                                       ;
 ; Total pins                         ; 126                                       ;
 ; Total virtual pins                 ; 0                                         ;
 ; Total memory bits                  ; 12,288                                    ;
@@ -244,28 +243,28 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 1,551 ;
+; Estimated Total logic elements              ; 1,559 ;
 ;                                             ;       ;
-; Total combinational functions               ; 1231  ;
+; Total combinational functions               ; 1223  ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 867   ;
-;     -- 3 input functions                    ; 242   ;
-;     -- <=2 input functions                  ; 122   ;
+;     -- 4 input functions                    ; 875   ;
+;     -- 3 input functions                    ; 225   ;
+;     -- <=2 input functions                  ; 123   ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 1092  ;
+;     -- normal mode                          ; 1084  ;
 ;     -- arithmetic mode                      ; 139   ;
 ;                                             ;       ;
-; Total registers                             ; 388   ;
-;     -- Dedicated logic registers            ; 388   ;
+; Total registers                             ; 404   ;
+;     -- Dedicated logic registers            ; 404   ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
 ; I/O pins                                    ; 126   ;
 ; Total memory bits                           ; 12288 ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
-; Maximum fan-out                             ; 436   ;
-; Total fan-out                               ; 6860  ;
-; Average fan-out                             ; 3.57  ;
+; Maximum fan-out                             ; 452   ;
+; Total fan-out                               ; 6923  ;
+; Average fan-out                             ; 3.59  ;
 +---------------------------------------------+-------+
 
 
@@ -274,7 +273,7 @@ applicable agreement for further details.
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                        ; Library Name ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------+--------------+
-; |p18240_top                                  ; 1231 (64)         ; 388 (0)      ; 12288       ; 0            ; 0       ; 0         ; 126  ; 0            ; |p18240_top                                                                                                ;              ;
+; |p18240_top                                  ; 1223 (64)         ; 404 (0)      ; 12288       ; 0            ; 0       ; 0         ; 126  ; 0            ; |p18240_top                                                                                                ;              ;
 ;    |SevenSegmentControl:ssc|                 ; 56 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|SevenSegmentControl:ssc                                                                        ;              ;
 ;       |SevenSegmentDigit:ssd0|               ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|SevenSegmentControl:ssc|SevenSegmentDigit:ssd0                                                 ;              ;
 ;          |HEXtoSevenSegment:h2ss|            ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|SevenSegmentControl:ssc|SevenSegmentDigit:ssd0|HEXtoSevenSegment:h2ss                          ;              ;
@@ -292,9 +291,9 @@ applicable agreement for further details.
 ;          |HEXtoSevenSegment:h2ss|            ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|SevenSegmentControl:ssc|SevenSegmentDigit:ssd6|HEXtoSevenSegment:h2ss                          ;              ;
 ;       |SevenSegmentDigit:ssd7|               ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|SevenSegmentControl:ssc|SevenSegmentDigit:ssd7                                                 ;              ;
 ;          |HEXtoSevenSegment:h2ss|            ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|SevenSegmentControl:ssc|SevenSegmentDigit:ssd7|HEXtoSevenSegment:h2ss                          ;              ;
-;    |controlpath:cp|                          ; 310 (310)         ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|controlpath:cp                                                                                 ;              ;
-;    |datapath:dp|                             ; 679 (13)          ; 212 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp                                                                                    ;              ;
-;       |alu:alu_dp|                           ; 329 (329)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|alu:alu_dp                                                                         ;              ;
+;    |controlpath:cp|                          ; 311 (311)         ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|controlpath:cp                                                                                 ;              ;
+;    |datapath:dp|                             ; 677 (14)          ; 228 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp                                                                                    ;              ;
+;       |alu:alu_dp|                           ; 328 (328)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|alu:alu_dp                                                                         ;              ;
 ;       |demux:reg_load_decoder|               ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|demux:reg_load_decoder                                                             ;              ;
 ;       |mux4to1:MuxA|                         ; 117 (117)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|mux4to1:MuxA                                                                       ;              ;
 ;       |mux4to1:MuxB|                         ; 116 (116)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|mux4to1:MuxB                                                                       ;              ;
@@ -314,14 +313,15 @@ applicable agreement for further details.
 ;       |register:memDataReg|                  ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|register:memDataReg                                                                ;              ;
 ;       |register:pcReg|                       ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|register:pcReg                                                                     ;              ;
 ;       |register:spReg|                       ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|register:spReg                                                                     ;              ;
-;       |tridrive:a|                           ; 37 (37)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|tridrive:a                                                                         ;              ;
+;       |register:to_LED|                      ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|register:to_LED                                                                    ;              ;
+;       |tridrive:a|                           ; 36 (36)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|tridrive:a                                                                         ;              ;
 ;       |tridrive:c|                           ; 49 (49)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|tridrive:c                                                                         ;              ;
-;       |tridrive:from_SW|                     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|tridrive:from_SW                                                                   ;              ;
-;    |memorySystem:mem|                        ; 122 (3)           ; 166 (0)      ; 12288       ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|memorySystem:mem                                                                               ;              ;
+;       |tridrive:from_SW|                     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|tridrive:from_SW                                                                   ;              ;
+;    |memorySystem:mem|                        ; 115 (3)           ; 166 (0)      ; 12288       ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|memorySystem:mem                                                                               ;              ;
 ;       |memory256x16:dmem|                    ; 41 (41)           ; 50 (50)      ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|memorySystem:mem|memory256x16:dmem                                                             ;              ;
 ;          |altsyncram:mem_rtl_0|              ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|memorySystem:mem|memory256x16:dmem|altsyncram:mem_rtl_0                                        ;              ;
 ;             |altsyncram_nvd1:auto_generated| ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|memorySystem:mem|memory256x16:dmem|altsyncram:mem_rtl_0|altsyncram_nvd1:auto_generated         ;              ;
-;       |memory256x16:smem|                    ; 33 (33)           ; 50 (50)      ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|memorySystem:mem|memory256x16:smem                                                             ;              ;
+;       |memory256x16:smem|                    ; 26 (26)           ; 50 (50)      ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|memorySystem:mem|memory256x16:smem                                                             ;              ;
 ;          |altsyncram:mem_rtl_0|              ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|memorySystem:mem|memory256x16:smem|altsyncram:mem_rtl_0                                        ;              ;
 ;             |altsyncram_nvd1:auto_generated| ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|memorySystem:mem|memory256x16:smem|altsyncram:mem_rtl_0|altsyncram_nvd1:auto_generated         ;              ;
 ;       |memory256x16_program:pmem|            ; 45 (45)           ; 66 (66)      ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|memorySystem:mem|memory256x16_program:pmem                                                     ;              ;
@@ -347,12 +347,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 388   ;
+; Total registers                              ; 404   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 249   ;
+; Number of registers using Asynchronous Clear ; 265   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 287   ;
+; Number of registers using Clock Enable       ; 303   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -1058,15 +1058,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------+-------+----------+------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "datapath:dp|register:to_LED"                                                        ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +----------------------------------------------------------------+
 ; Port Connectivity Checks: "datapath:dp|demux:reg_load_decoder" ;
 +------+-------+----------+--------------------------------------+
@@ -1136,7 +1127,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; aluResult        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; regSelA          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; regSelB          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; LEDR             ; Input  ; Info     ; Stuck at GND                                                                        ;
 +------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
@@ -1165,7 +1155,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 12.1 Build 177 11/07/2012 SJ Full Version
-    Info: Processing started: Tue Dec  6 21:32:00 2016
+    Info: Processing started: Tue Dec  6 22:17:10 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off p18240_top -c p18240_top
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file regfile.sv
@@ -1209,7 +1199,6 @@ Warning (10036): Verilog HDL or VHDL warning at p18240.sv(63): object "r7" assig
 Warning (10036): Verilog HDL or VHDL warning at p18240.sv(63): object "r6" assigned a value but never read
 Warning (10036): Verilog HDL or VHDL warning at p18240.sv(63): object "r5" assigned a value but never read
 Warning (10036): Verilog HDL or VHDL warning at p18240.sv(63): object "r4" assigned a value but never read
-Warning (10030): Net "LEDR[15..0]" at p18240.sv(49) has no driver or initial value, using a default initial value '0'
 Warning (10034): Output port "VGA_R" at p18240.sv(50) has no driver
 Warning (10034): Output port "VGA_G" at p18240.sv(50) has no driver
 Warning (10034): Output port "VGA_B" at p18240.sv(50) has no driver
@@ -1371,22 +1360,6 @@ Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:c|bus[2]" to the node "memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[21]" into an OR gate
     Warning (13047): Converted the fan-out from the tri-state buffer "datapath:dp|tridrive:c|bus[3]" to the node "memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[23]" into an OR gate
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[0]" is stuck at GND
-    Warning (13410): Pin "LEDR[1]" is stuck at GND
-    Warning (13410): Pin "LEDR[2]" is stuck at GND
-    Warning (13410): Pin "LEDR[3]" is stuck at GND
-    Warning (13410): Pin "LEDR[4]" is stuck at GND
-    Warning (13410): Pin "LEDR[5]" is stuck at GND
-    Warning (13410): Pin "LEDR[6]" is stuck at GND
-    Warning (13410): Pin "LEDR[7]" is stuck at GND
-    Warning (13410): Pin "LEDR[8]" is stuck at GND
-    Warning (13410): Pin "LEDR[9]" is stuck at GND
-    Warning (13410): Pin "LEDR[10]" is stuck at GND
-    Warning (13410): Pin "LEDR[11]" is stuck at GND
-    Warning (13410): Pin "LEDR[12]" is stuck at GND
-    Warning (13410): Pin "LEDR[13]" is stuck at GND
-    Warning (13410): Pin "LEDR[14]" is stuck at GND
-    Warning (13410): Pin "LEDR[15]" is stuck at GND
     Warning (13410): Pin "VGA_R[0]" is stuck at GND
     Warning (13410): Pin "VGA_R[1]" is stuck at GND
     Warning (13410): Pin "VGA_R[2]" is stuck at GND
@@ -1424,15 +1397,15 @@ Warning (21074): Design contains 3 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[2]"
     Warning (15610): No output dependent on input pin "KEY[3]"
     Warning (15610): No output dependent on input pin "CLOCK_50"
-Info (21057): Implemented 1760 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1768 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 103 output pins
-    Info (21061): Implemented 1586 logic cells
+    Info (21061): Implemented 1594 logic cells
     Info (21064): Implemented 48 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 113 warnings
-    Info: Peak virtual memory: 703 megabytes
-    Info: Processing ended: Tue Dec  6 21:32:06 2016
-    Info: Elapsed time: 00:00:06
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 96 warnings
+    Info: Peak virtual memory: 695 megabytes
+    Info: Processing ended: Tue Dec  6 22:17:18 2016
+    Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:06
 
 

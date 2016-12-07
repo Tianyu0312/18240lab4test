@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Tue Dec  6 21:32:06 2016
+Analysis & Synthesis Status : Successful - Tue Dec  6 22:17:18 2016
 Quartus II 64-Bit Version : 12.1 Build 177 11/07/2012 SJ Full Version
 Revision Name : p18240_top
 Top-level Entity Name : p18240_top
 Family : Cyclone IV E
-Total logic elements : 1,551
-    Total combinational functions : 1,231
-    Dedicated logic registers : 388
-Total registers : 388
+Total logic elements : 1,559
+    Total combinational functions : 1,223
+    Dedicated logic registers : 404
+Total registers : 404
 Total pins : 126
 Total virtual pins : 0
 Total memory bits : 12,288
