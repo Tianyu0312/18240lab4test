@@ -1,7 +1,7 @@
         ; add32.asm
         ; {R0, R1} = {R0, R1} + {R6, R7}
 
-        .ORG $0
+        .ORG $0000
         
 start1  LDI R2, $0003   ;
         LDA R0, $2000   ;
