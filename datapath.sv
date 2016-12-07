@@ -107,11 +107,11 @@ module datapath (
 
   //Read 2000:
    logic drive_SW_L;
- assign drive_SW_L = ((~cPts.re_L) & (memAddr == 16'h2000)) ? 1'b0: 1'b1;
+ assign drive_SW_L = ((~cPts.we_L) & (memAddr == 16'h2000)) ? 1'b0: 1'b1;
  tridrive #(.WIDTH(16)) from_SW(.data(SW), .bus(newMDR), .en_L(drive_SW_L));
  //Write 2000:
  logic load2000_L;
- assign load2000_L = ((~cPts.we_L) & (memAddr == 16'h2000)) ? 1'b0: 1'b1;
+ assign load2000_L = ((~cPts.re_L) & (memAddr == 16'h2000)) ? 1'b0: 1'b1;
  register #(16) to_LED(.out(LEDR), .clock(clock),.reset_L(reset_L),.load_L(load2000_L), .in(newMDR));
  
    
