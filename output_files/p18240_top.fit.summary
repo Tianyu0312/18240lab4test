@@ -1,12 +1,12 @@
-Fitter Status : Successful - Tue Dec  6 17:06:19 2016
+Fitter Status : Successful - Tue Dec  6 21:32:27 2016
 Quartus II 64-Bit Version : 12.1 Build 177 11/07/2012 SJ Full Version
 Revision Name : p18240_top
 Top-level Entity Name : p18240_top
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 1,404 / 114,480 ( 1 % )
-    Total combinational functions : 1,251 / 114,480 ( 1 % )
+Total logic elements : 1,386 / 114,480 ( 1 % )
+    Total combinational functions : 1,250 / 114,480 ( 1 % )
     Dedicated logic registers : 388 / 114,480 ( < 1 % )
 Total registers : 388
 Total pins : 126 / 529 ( 24 % )

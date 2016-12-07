@@ -1,5 +1,5 @@
 Analysis & Synthesis report for p18240_top
-Tue Dec  6 17:05:58 2016
+Tue Dec  6 21:32:06 2016
 Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Full Version
 
 
@@ -47,13 +47,13 @@ Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Full Version
  39. Parameter Settings for User Entity Instance: datapath:dp|register:spReg
  40. Parameter Settings for User Entity Instance: datapath:dp|register:condCodeReg
  41. Parameter Settings for User Entity Instance: datapath:dp|tridrive:from_SW
- 42. Parameter Settings for User Entity Instance: datapath:dp|register:comb_24
+ 42. Parameter Settings for User Entity Instance: datapath:dp|register:to_LED
  43. Parameter Settings for Inferred Entity Instance: memorySystem:mem|memory256x16_program:pmem|altsyncram:mem_rtl_0
  44. Parameter Settings for Inferred Entity Instance: memorySystem:mem|memory256x16:dmem|altsyncram:mem_rtl_0
  45. Parameter Settings for Inferred Entity Instance: memorySystem:mem|memory256x16:smem|altsyncram:mem_rtl_0
  46. altsyncram Parameter Settings by Entity Instance
  47. Port Connectivity Checks: "SevenSegmentControl:ssc"
- 48. Port Connectivity Checks: "datapath:dp|register:comb_24"
+ 48. Port Connectivity Checks: "datapath:dp|register:to_LED"
  49. Port Connectivity Checks: "datapath:dp|demux:reg_load_decoder"
  50. Port Connectivity Checks: "datapath:dp|mux8to1:REG1B"
  51. Port Connectivity Checks: "datapath:dp|mux8to1:REG1A"
@@ -87,13 +87,13 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +------------------------------------+-------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Dec  6 17:05:57 2016     ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec  6 21:32:06 2016     ;
 ; Quartus II 64-Bit Version          ; 12.1 Build 177 11/07/2012 SJ Full Version ;
 ; Revision Name                      ; p18240_top                                ;
 ; Top-level Entity Name              ; p18240_top                                ;
 ; Family                             ; Cyclone IV E                              ;
-; Total logic elements               ; 1,554                                     ;
-;     Total combinational functions  ; 1,232                                     ;
+; Total logic elements               ; 1,551                                     ;
+;     Total combinational functions  ; 1,231                                     ;
 ;     Dedicated logic registers      ; 388                                       ;
 ; Total registers                    ; 388                                       ;
 ; Total pins                         ; 126                                       ;
@@ -244,16 +244,16 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 1,554 ;
+; Estimated Total logic elements              ; 1,551 ;
 ;                                             ;       ;
-; Total combinational functions               ; 1232  ;
+; Total combinational functions               ; 1231  ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 869   ;
+;     -- 4 input functions                    ; 867   ;
 ;     -- 3 input functions                    ; 242   ;
-;     -- <=2 input functions                  ; 121   ;
+;     -- <=2 input functions                  ; 122   ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 1093  ;
+;     -- normal mode                          ; 1092  ;
 ;     -- arithmetic mode                      ; 139   ;
 ;                                             ;       ;
 ; Total registers                             ; 388   ;
@@ -264,8 +264,8 @@ applicable agreement for further details.
 ; Total memory bits                           ; 12288 ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out                             ; 436   ;
-; Total fan-out                               ; 6868  ;
-; Average fan-out                             ; 3.58  ;
+; Total fan-out                               ; 6860  ;
+; Average fan-out                             ; 3.57  ;
 +---------------------------------------------+-------+
 
 
@@ -274,7 +274,7 @@ applicable agreement for further details.
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                        ; Library Name ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------+--------------+
-; |p18240_top                                  ; 1232 (64)         ; 388 (0)      ; 12288       ; 0            ; 0       ; 0         ; 126  ; 0            ; |p18240_top                                                                                                ;              ;
+; |p18240_top                                  ; 1231 (64)         ; 388 (0)      ; 12288       ; 0            ; 0       ; 0         ; 126  ; 0            ; |p18240_top                                                                                                ;              ;
 ;    |SevenSegmentControl:ssc|                 ; 56 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|SevenSegmentControl:ssc                                                                        ;              ;
 ;       |SevenSegmentDigit:ssd0|               ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|SevenSegmentControl:ssc|SevenSegmentDigit:ssd0                                                 ;              ;
 ;          |HEXtoSevenSegment:h2ss|            ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|SevenSegmentControl:ssc|SevenSegmentDigit:ssd0|HEXtoSevenSegment:h2ss                          ;              ;
@@ -293,10 +293,10 @@ applicable agreement for further details.
 ;       |SevenSegmentDigit:ssd7|               ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|SevenSegmentControl:ssc|SevenSegmentDigit:ssd7                                                 ;              ;
 ;          |HEXtoSevenSegment:h2ss|            ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|SevenSegmentControl:ssc|SevenSegmentDigit:ssd7|HEXtoSevenSegment:h2ss                          ;              ;
 ;    |controlpath:cp|                          ; 310 (310)         ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|controlpath:cp                                                                                 ;              ;
-;    |datapath:dp|                             ; 682 (13)          ; 212 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp                                                                                    ;              ;
-;       |alu:alu_dp|                           ; 328 (328)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|alu:alu_dp                                                                         ;              ;
+;    |datapath:dp|                             ; 679 (13)          ; 212 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp                                                                                    ;              ;
+;       |alu:alu_dp|                           ; 329 (329)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|alu:alu_dp                                                                         ;              ;
 ;       |demux:reg_load_decoder|               ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|demux:reg_load_decoder                                                             ;              ;
-;       |mux4to1:MuxA|                         ; 119 (119)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|mux4to1:MuxA                                                                       ;              ;
+;       |mux4to1:MuxA|                         ; 117 (117)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|mux4to1:MuxA                                                                       ;              ;
 ;       |mux4to1:MuxB|                         ; 116 (116)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|mux4to1:MuxB                                                                       ;              ;
 ;       |reg_file:rfile|                       ; 10 (0)            ; 128 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|reg_file:rfile                                                                     ;              ;
 ;          |demux:reg_en_decoder|              ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|reg_file:rfile|demux:reg_en_decoder                                                ;              ;
@@ -314,17 +314,17 @@ applicable agreement for further details.
 ;       |register:memDataReg|                  ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|register:memDataReg                                                                ;              ;
 ;       |register:pcReg|                       ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|register:pcReg                                                                     ;              ;
 ;       |register:spReg|                       ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|register:spReg                                                                     ;              ;
-;       |tridrive:a|                           ; 39 (39)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|tridrive:a                                                                         ;              ;
+;       |tridrive:a|                           ; 37 (37)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|tridrive:a                                                                         ;              ;
 ;       |tridrive:c|                           ; 49 (49)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|tridrive:c                                                                         ;              ;
 ;       |tridrive:from_SW|                     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|datapath:dp|tridrive:from_SW                                                                   ;              ;
-;    |memorySystem:mem|                        ; 120 (3)           ; 166 (0)      ; 12288       ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|memorySystem:mem                                                                               ;              ;
+;    |memorySystem:mem|                        ; 122 (3)           ; 166 (0)      ; 12288       ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|memorySystem:mem                                                                               ;              ;
 ;       |memory256x16:dmem|                    ; 41 (41)           ; 50 (50)      ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|memorySystem:mem|memory256x16:dmem                                                             ;              ;
 ;          |altsyncram:mem_rtl_0|              ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|memorySystem:mem|memory256x16:dmem|altsyncram:mem_rtl_0                                        ;              ;
 ;             |altsyncram_nvd1:auto_generated| ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|memorySystem:mem|memory256x16:dmem|altsyncram:mem_rtl_0|altsyncram_nvd1:auto_generated         ;              ;
 ;       |memory256x16:smem|                    ; 33 (33)           ; 50 (50)      ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|memorySystem:mem|memory256x16:smem                                                             ;              ;
 ;          |altsyncram:mem_rtl_0|              ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|memorySystem:mem|memory256x16:smem|altsyncram:mem_rtl_0                                        ;              ;
 ;             |altsyncram_nvd1:auto_generated| ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|memorySystem:mem|memory256x16:smem|altsyncram:mem_rtl_0|altsyncram_nvd1:auto_generated         ;              ;
-;       |memory256x16_program:pmem|            ; 43 (43)           ; 66 (66)      ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|memorySystem:mem|memory256x16_program:pmem                                                     ;              ;
+;       |memory256x16_program:pmem|            ; 45 (45)           ; 66 (66)      ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|memorySystem:mem|memory256x16_program:pmem                                                     ;              ;
 ;          |altsyncram:mem_rtl_0|              ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|memorySystem:mem|memory256x16_program:pmem|altsyncram:mem_rtl_0                                ;              ;
 ;             |altsyncram_imj1:auto_generated| ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |p18240_top|memorySystem:mem|memory256x16_program:pmem|altsyncram:mem_rtl_0|altsyncram_imj1:auto_generated ;              ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------+--------------+
@@ -371,7 +371,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; memorySystem:mem|memory256x16_program:pmem|mem~11               ; 1       ;
 ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[38] ; 1       ;
 ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[37] ; 1       ;
+; memorySystem:mem|memory256x16_program:pmem|mem~12               ; 1       ;
 ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[40] ; 1       ;
+; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[39] ; 1       ;
 ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[26] ; 1       ;
 ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[28] ; 1       ;
 ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[30] ; 1       ;
@@ -380,7 +382,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[20] ; 1       ;
 ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[22] ; 1       ;
 ; memorySystem:mem|memory256x16_program:pmem|mem_rtl_0_bypass[24] ; 1       ;
-; Total number of inverted registers = 18                         ;         ;
+; Total number of inverted registers = 20                         ;         ;
 +-----------------------------------------------------------------+---------+
 
 
@@ -812,13 +814,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: datapath:dp|register:comb_24 ;
-+----------------+-------+--------------------------------------------------+
-; Parameter Name ; Value ; Type                                             ;
-+----------------+-------+--------------------------------------------------+
-; WIDTH          ; 16    ; Signed Integer                                   ;
-+----------------+-------+--------------------------------------------------+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|register:to_LED ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1057,7 +1059,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "datapath:dp|register:comb_24"                                                       ;
+; Port Connectivity Checks: "datapath:dp|register:to_LED"                                                        ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -1163,7 +1165,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 12.1 Build 177 11/07/2012 SJ Full Version
-    Info: Processing started: Tue Dec  6 17:05:52 2016
+    Info: Processing started: Tue Dec  6 21:32:00 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off p18240_top -c p18240_top
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file regfile.sv
@@ -1202,7 +1204,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file control
 Info (12021): Found 0 design units, including 0 entities, in source file constants.sv
 Info (12021): Found 1 design units, including 1 entities, in source file alu.sv
     Info (12023): Found entity 1: alu
-Critical Warning (10846): Verilog HDL Instantiation warning at datapath.sv(115): instance has no name
 Info (12127): Elaborating entity "p18240_top" for the top level hierarchy
 Warning (10036): Verilog HDL or VHDL warning at p18240.sv(63): object "r7" assigned a value but never read
 Warning (10036): Verilog HDL or VHDL warning at p18240.sv(63): object "r6" assigned a value but never read
@@ -1242,12 +1243,14 @@ Warning (10230): Verilog HDL assignment warning at library.sv(164): truncated va
 Info (12128): Elaborating entity "register" for hierarchy "datapath:dp|register:condCodeReg"
 Info (12128): Elaborating entity "memorySystem" for hierarchy "memorySystem:mem"
 Info (12128): Elaborating entity "memory256x16_program" for hierarchy "memorySystem:mem|memory256x16_program:pmem"
-Warning (10850): Verilog HDL warning at library.sv(79): number of words (8193) in memory file does not match the number of elements in the address range [0:255]
+Warning (10850): Verilog HDL warning at library.sv(79): number of words (7) in memory file does not match the number of elements in the address range [0:255]
 Info (12128): Elaborating entity "memory256x16" for hierarchy "memorySystem:mem|memory256x16:dmem"
 Info (12128): Elaborating entity "SevenSegmentControl" for hierarchy "SevenSegmentControl:ssc"
 Info (12128): Elaborating entity "SevenSegmentDigit" for hierarchy "SevenSegmentControl:ssc|SevenSegmentDigit:ssd0"
 Info (12128): Elaborating entity "HEXtoSevenSegment" for hierarchy "SevenSegmentControl:ssc|SevenSegmentDigit:ssd0|HEXtoSevenSegment:h2ss"
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/afs/ece.cmu.edu/usr/shulij/Private/18240lab4test/db/p18240_top.ram0_memory256x16_program_6357e339.hdl.mif" contains "don't care" values -- overwriting them with 0s
 Warning (276020): Inferred RAM node "memorySystem:mem|memory256x16_program:pmem|mem_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/afs/ece.cmu.edu/usr/shulij/Private/18240lab4test/db/p18240_top.ram0_memory256x16_program_6357e339.hdl.mif" contains "don't care" values -- overwriting them with 0s
 Warning (276020): Inferred RAM node "memorySystem:mem|memory256x16:dmem|mem_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
 Warning (276020): Inferred RAM node "memorySystem:mem|memory256x16:smem|mem_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
 Info (19000): Inferred 3 megafunctions from design logic
@@ -1421,14 +1424,14 @@ Warning (21074): Design contains 3 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[2]"
     Warning (15610): No output dependent on input pin "KEY[3]"
     Warning (15610): No output dependent on input pin "CLOCK_50"
-Info (21057): Implemented 1763 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1760 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 103 output pins
-    Info (21061): Implemented 1589 logic cells
+    Info (21061): Implemented 1586 logic cells
     Info (21064): Implemented 48 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 112 warnings
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 113 warnings
     Info: Peak virtual memory: 703 megabytes
-    Info: Processing ended: Tue Dec  6 17:05:58 2016
+    Info: Processing ended: Tue Dec  6 21:32:06 2016
     Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:06
 

@@ -1,5 +1,5 @@
 Flow report for p18240_top
-Tue Dec  6 17:06:36 2016
+Tue Dec  6 21:32:44 2016
 Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Full Version
 
 
@@ -38,15 +38,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Flow Summary                                                                   ;
 +------------------------------------+-------------------------------------------+
-; Flow Status                        ; Successful - Tue Dec  6 17:06:36 2016     ;
+; Flow Status                        ; Successful - Tue Dec  6 21:32:44 2016     ;
 ; Quartus II 64-Bit Version          ; 12.1 Build 177 11/07/2012 SJ Full Version ;
 ; Revision Name                      ; p18240_top                                ;
 ; Top-level Entity Name              ; p18240_top                                ;
 ; Family                             ; Cyclone IV E                              ;
 ; Device                             ; EP4CE115F29C7                             ;
 ; Timing Models                      ; Final                                     ;
-; Total logic elements               ; 1,404 / 114,480 ( 1 % )                   ;
-;     Total combinational functions  ; 1,251 / 114,480 ( 1 % )                   ;
+; Total logic elements               ; 1,386 / 114,480 ( 1 % )                   ;
+;     Total combinational functions  ; 1,250 / 114,480 ( 1 % )                   ;
 ;     Dedicated logic registers      ; 388 / 114,480 ( < 1 % )                   ;
 ; Total registers                    ; 388                                       ;
 ; Total pins                         ; 126 / 529 ( 24 % )                        ;
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/06/2016 17:05:52 ;
+; Start date & time ; 12/06/2016 21:32:01 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; p18240_top          ;
 +-------------------+---------------------+
@@ -73,7 +73,7 @@ applicable agreement for further details.
 +-------------------------------------+------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 0.148106195223942      ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 0.148107792007949      ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                   ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL) ; <None>        ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                     ; --            ; --          ; --             ;
@@ -91,12 +91,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:05     ; 1.0                     ; 695 MB              ; 00:00:05                           ;
-; Fitter                    ; 00:00:20     ; 3.1                     ; 1084 MB             ; 00:00:31                           ;
-; Assembler                 ; 00:00:05     ; 1.0                     ; 620 MB              ; 00:00:04                           ;
-; TimeQuest Timing Analyzer ; 00:00:05     ; 2.7                     ; 752 MB              ; 00:00:05                           ;
-; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 804 MB              ; 00:00:02                           ;
-; Total                     ; 00:00:37     ; --                      ; --                  ; 00:00:47                           ;
+; Analysis & Synthesis      ; 00:00:06     ; 1.0                     ; 695 MB              ; 00:00:06                           ;
+; Fitter                    ; 00:00:19     ; 2.9                     ; 1079 MB             ; 00:00:30                           ;
+; Assembler                 ; 00:00:04     ; 1.0                     ; 620 MB              ; 00:00:04                           ;
+; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 750 MB              ; 00:00:04                           ;
+; EDA Netlist Writer        ; 00:00:03     ; 1.0                     ; 803 MB              ; 00:00:02                           ;
+; Total                     ; 00:00:36     ; --                      ; --                  ; 00:00:46                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -105,11 +105,11 @@ applicable agreement for further details.
 +---------------------------+------------------------------+---------+------------+----------------+
 ; Module Name               ; Machine Hostname             ; OS Name ; OS Version ; Processor type ;
 +---------------------------+------------------------------+---------+------------+----------------+
-; Analysis & Synthesis      ; gorgons.andrew.local.cmu.edu ; Red Hat ; Red Hat    ; x86_64         ;
-; Fitter                    ; gorgons.andrew.local.cmu.edu ; Red Hat ; Red Hat    ; x86_64         ;
-; Assembler                 ; gorgons.andrew.local.cmu.edu ; Red Hat ; Red Hat    ; x86_64         ;
-; TimeQuest Timing Analyzer ; gorgons.andrew.local.cmu.edu ; Red Hat ; Red Hat    ; x86_64         ;
-; EDA Netlist Writer        ; gorgons.andrew.local.cmu.edu ; Red Hat ; Red Hat    ; x86_64         ;
+; Analysis & Synthesis      ; artemis.andrew.local.cmu.edu ; Red Hat ; Red Hat    ; x86_64         ;
+; Fitter                    ; artemis.andrew.local.cmu.edu ; Red Hat ; Red Hat    ; x86_64         ;
+; Assembler                 ; artemis.andrew.local.cmu.edu ; Red Hat ; Red Hat    ; x86_64         ;
+; TimeQuest Timing Analyzer ; artemis.andrew.local.cmu.edu ; Red Hat ; Red Hat    ; x86_64         ;
+; EDA Netlist Writer        ; artemis.andrew.local.cmu.edu ; Red Hat ; Red Hat    ; x86_64         ;
 +---------------------------+------------------------------+---------+------------+----------------+
 
 

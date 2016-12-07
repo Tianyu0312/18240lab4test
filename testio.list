@@ -1,6 +1,9 @@
 addr data   label     opcode  operands
 ---- ----  --------   ------  --------
-0000 0400             LDA     R0      
-0001 2000                     MM      
-0002 3000             STOP            
-2000 ABCD  MM         .DW     $ABCD   
+0000 0C00             LDI     R0      
+0001 ABCD                     $ABCD   
+0002 0600             STA     $2000   
+0003 2000                     R0      
+0004 0400             LDA     R0      
+0005 2000                     $2000   
+0006 3000             STOP            
