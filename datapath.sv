@@ -112,7 +112,7 @@ module datapath (
  //Write 2000:
  logic load2000_L;
  assign load2000_L = ((~cPts.we_L) & (memAddr == 16'h2000)) ? 1'b0: 1'b1;
- register #(16) to_LED(.out(LEDR[15:0]), .clock(clock),.reset_L(reset_L),.load_L(load2000_L), .in(MDRout));
+ register #(16) to_LED(.out(LEDR), .clock(clock),.reset_L(reset_L),.load_L(load2000_L), .in(MDRout));
  
    
 endmodule 
